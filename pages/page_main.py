@@ -97,3 +97,17 @@ class Special:
 #         browser.element('.course-title').should(have.text(value))
 
 # И удалить все классы, которые над этим вариантом, т.к они повторяются
+
+
+class Search:
+
+    def type_search_text(self, value):
+        browser.element('.site-header__search-input').type(value).press_enter()
+        # value = Загадки Гоголя
+    def check(self, value):
+        browser.element('[href="/courses/180"]').should(have.no.text(value))
+        # value = Загадки Гоголя
+
+
+class GoosegooseKids:
+    pass
