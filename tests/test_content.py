@@ -70,4 +70,3 @@ def test_audio_materials():
 
     with allure.step('Проверка отображения заголовка аудиоматериала'):
         open_page.check_tytle_content_page('Краткая история вещей')
-

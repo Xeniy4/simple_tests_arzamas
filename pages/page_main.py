@@ -13,7 +13,7 @@ class OpenPage:
     # варианты: Курсы, Подкасты, Материалы, Журнал
 
     def navigation_menu(self):
-        browser.element('.site-header__subnav-button ').click()
+        browser.element('.site-header__subnav-button').click()
 
     def navigation_menu_point(self, value):
         browser.element(f'//nav//span[contains(text(),"{value}")]').click()
