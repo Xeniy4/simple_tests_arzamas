@@ -3,7 +3,10 @@ from selene import browser, have
 
 
 
-class Open_page_header:
+class OpenPage:
+
+    def open(self):
+        browser.open('/')
 
     def navigation_list(self, value):
         browser.element(f'//li/a[contains(text(),"{value}")]').click()
@@ -44,47 +47,37 @@ class Open_page_header:
     def check_tytle_content_page(self, value):
         browser.element('.course-title').should(have.text(value))
 
-
-
-class Courses:
-
     def select_course(self):
         browser.element('[href="/courses/181"]').click()
-    # Тут узнать как можно найти локатор подругому, чтобы не через href, а по названию курса.
+    # Тут узнать как можно найти локатор по-другому, чтобы не через href, а по названию курса.
     # Там <h2 class="card__title">Гай Юлий Цезарь покоряет мир</h2>. Как бы объединить классы и contains(text()
 
-    def click_button_pay(self):
-        browser.element('.product-notice__button').click()
+    def open_page_course(self, value):
+        self.open()
+        self.navigation_list('Курсы')
+        self.select_type_filter_kind_courses(value) # тут должно быть написано Мировая история, можно так переменной сделать?
+        self.select_course()
 
-    def check_auth_page(self, value):
-        browser.element('.az-form__title').should(have.text(value))
-        # value == Войти
-
-
-class Podcast:
-# в тестах перед тем как перейти на подкаст выбрать другую тематику в def select_type_filter_kind_courses
     def select_podcast(self):
         browser.element('[href="/podcasts/330"]').click()
     # История россии
-
     # check_tytle_content_page Проверка связей
-
-
-class Audio_materials:
 
     def select_audio_material(self):
         browser.element('[href="/shorts/374"]').click()
         #антропология
-
         # check_tytle_content_page Краткая история вещей
 
 
-class Special:
-    def select_special(self):
-        browser.element('[href="/shorts/364"]').click()
-        #кино
+class Courses:
 
-        # check_tytle_content_page Рождественские фильмы
+    def click_button_pay_course(self):
+        browser.element('.product-notice__button').click()
+
+    def check_auth_page(self, value):
+        browser.element('.az-form__title').should(have.text(value))
+        # value == Вход
+
 
 # т.к переход на страницу контента по ссылке href, можно сделать так:
 # class ContentPage:
@@ -110,4 +103,17 @@ class Search:
 
 
 class GoosegooseKids:
-    pass
+
+    def navigation_list_kids(self,value):
+        browser.element(f'.kids-courses__filters-button[data-kind="{value}"]').click()
+        # value = all, courses, podcasts, audio_materials,
+
+    def select_course_kids(self):
+        browser.element('[href="/kids/427"]').click()
+
+    def select_podcast_kids(self):
+        browser.element('[href="/kids/416"]').click()
+
+    def select_audio_material_kids(self):
+        browser.element('[href="/kids/474"]').click()
+
