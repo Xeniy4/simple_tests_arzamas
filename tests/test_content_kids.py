@@ -5,6 +5,9 @@ from pages.page_main import OpenPage, GoosegooseKids
 open_page = OpenPage()
 kigs = GoosegooseKids()
 
+
+@allure.epic("Web UI тесты")
+@allure.story('Проверка отображения заголовка курса')
 def test_courses_kids():
 
     with allure.step('Открыть Главную страницу'):
@@ -23,6 +26,8 @@ def test_courses_kids():
         kigs.check_tutle_content_page_kids('Съедобное/несъедобное')
 
 
+@allure.epic("Web UI тесты")
+@allure.story('Проверка отображения заголовка подкаста')
 def test_podcast_kids():
     with allure.step('Открыть Главную страницу'):
         open_page.open()
@@ -40,6 +45,8 @@ def test_podcast_kids():
         kigs.check_tutle_content_page_kids('Это вам не сказки')
 
 
+@allure.epic("Web UI тесты")
+@allure.story('Проверка отображения заголовка аудиокниги')
 def test_audio_kids():
     with allure.step('Открыть Главную страницу'):
         open_page.open()

@@ -7,6 +7,7 @@ courses = Courses()
 search = Search()
 
 
+@allure.epic("Web UI тесты")
 @allure.story('Проверка отображения карточки курса')
 def test_courses_content():
 
@@ -26,6 +27,7 @@ def test_courses_content():
         open_page.check_tytle_content_page('Гай Юлий Цезарь покоряет мир')
 
 
+@allure.epic("Web UI тесты")
 @allure.story('Проверка покупки курса без авторизации на сайте')
 def test_buy_course_no_auth():
     with allure.step('Открыть страницу курса'):
@@ -38,6 +40,8 @@ def test_buy_course_no_auth():
         courses.check_auth_page('Вход')
 
 
+@allure.epic("Web UI тесты")
+@allure.story('Проверка отображения заголовка подкаста')
 def test_pogcast_content():
     with allure.step('Открыть Главную страницу'):
         open_page.open()
@@ -55,6 +59,8 @@ def test_pogcast_content():
         open_page.check_tytle_content_page('Проверка связей')
 
 
+@allure.epic("Web UI тесты")
+@allure.story('Проверка отображения заголовка аудиоматериала')
 def test_audio_materials():
     with allure.step('Открыть Главную страницу'):
         open_page.open()
