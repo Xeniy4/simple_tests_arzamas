@@ -1,8 +1,6 @@
 from selene import browser, have
 
 
-
-
 class OpenPage:
 
     def open(self):
