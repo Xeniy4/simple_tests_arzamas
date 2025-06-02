@@ -1,6 +1,5 @@
 from selene import browser, have
 
-
 class GoosegooseKids:
 
     def navigation_list_kids(self,value):

@@ -24,5 +24,8 @@ class ItemCourseValue(enum.Enum):
     item_course_economic = 'Экономика'
 
 
-class ItemPodcastValue(enum.Enum):
-    item_podcast_all = ''
+class NavigationListKidsValue(enum.Enum):
+    all_nav_list_kids = 'all'
+    courses_nav_list_kids = 'courses'
+    podcasts_nav_list_kids = 'podcasts'
+    audio_materials_nav_list_kids = 'audio_materials'

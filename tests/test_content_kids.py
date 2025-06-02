@@ -1,9 +1,11 @@
 import allure
 from pages.page_goosegoosekids import GoosegooseKids
 from pages.page_open import OpenPage
+from pages.page_value_items import NavigationListKidsValue
 
 open_page = OpenPage()
 kids = GoosegooseKids()
+nav_list_value_kids = NavigationListKidsValue
 
 
 @allure.epic("Web UI тесты")
@@ -17,7 +19,7 @@ def test_mapping_courses_kids():
         open_page.button_goosegoose()
 
     with allure.step('Открыть раздел "Курсы"'):
-        kids.navigation_list_kids('courses')
+        kids.navigation_list_kids(nav_list_value_kids.courses_nav_list_kids.value)
 
     with allure.step('Открыть курс "Съедобное/несъедобное"'):
         kids.select_course_kids()
@@ -36,7 +38,7 @@ def test_mapping_podcast_kids():
         open_page.button_goosegoose()
 
     with allure.step('Открыть раздел "Подкасты"'):
-        kids.navigation_list_kids('podcasts')
+        kids.navigation_list_kids(nav_list_value_kids.podcasts_nav_list_kids.value)
 
     with allure.step('Открыть подкаст "Это вам не сказки"'):
         kids.select_podcast_kids()
@@ -55,7 +57,7 @@ def test_mapping_audio_kids():
         open_page.button_goosegoose()
 
     with allure.step('Открыть раздел "Аудиокниги"'):
-        kids.navigation_list_kids('audio_materials')
+        kids.navigation_list_kids(nav_list_value_kids.audio_materials_nav_list_kids.value)
 
     with allure.step('Открыть аудиокнигу "Мифы звездного неба"'):
         kids.select_audio_material_kids()
