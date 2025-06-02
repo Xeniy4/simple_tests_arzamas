@@ -19,24 +19,24 @@ selenoid_url = os.getenv("SELENOID_URL")
 
 @pytest.fixture(scope="session", autouse=True)
 def selenoid():
-    # options = Options()
-    # selenoid_capabilities = {
-    #     "browserName": "chrome",
-    #     "browserVersion": "127.0",
-    #     "selenoid:options": {
-    #         "enableVNC": True,
-    #         "enableVideo": True
-    #     }
-    # }
-    #
-    # selenoid_full_url = f"https://{selenoid_login}:{selenoid_pass}@{selenoid_url}/wd/hub"
-    #
-    # options.capabilities.update(selenoid_capabilities)
-    # driver = webdriver.Remote(
-    #     command_executor=selenoid_full_url,
-    #     options=options)
-    #
-    # browser.config.driver = driver
+    options = Options()
+    selenoid_capabilities = {
+        "browserName": "chrome",
+        "browserVersion": "127.0",
+        "selenoid:options": {
+            "enableVNC": True,
+            "enableVideo": True
+        }
+    }
+
+    selenoid_full_url = f"https://{selenoid_login}:{selenoid_pass}@{selenoid_url}/wd/hub"
+
+    options.capabilities.update(selenoid_capabilities)
+    driver = webdriver.Remote(
+        command_executor=selenoid_full_url,
+        options=options)
+
+    browser.config.driver = driver
 
     driver_options = webdriver.ChromeOptions()
     driver_options.page_load_strategy = 'normal'
