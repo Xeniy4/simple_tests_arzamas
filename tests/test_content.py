@@ -1,5 +1,7 @@
 import allure
-from pages.page_main import OpenPage, Courses, Search
+from pages.page_search import Search
+from pages.page_courses import Courses
+from pages.page_open import OpenPage
 
 open_page = OpenPage()
 courses = Courses()

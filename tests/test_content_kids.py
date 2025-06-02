@@ -1,6 +1,6 @@
 import allure
-from pages.page_main import OpenPage, GoosegooseKids
-
+from pages.page_goosegoosekids import GoosegooseKids
+from pages.page_open import OpenPage
 
 open_page = OpenPage()
 kigs = GoosegooseKids()
