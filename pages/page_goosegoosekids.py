@@ -2,7 +2,7 @@ from selene import browser, have
 
 class GoosegooseKids:
 
-    def navigation_list_kids(self,value):
+    def select_navigation_list_kids(self, value):
         browser.element(f'.kids-courses__filters-button[data-kind="{value}"]').click()
         # value = all, courses, podcasts, audio_materials,
 

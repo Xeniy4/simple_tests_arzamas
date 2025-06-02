@@ -7,28 +7,28 @@ class OpenPage:
     def open(self):
         browser.open('/')
 
-    def navigation_list(self, value):
+    def select_navigation_list(self, value):
         browser.element(f'//li/a[contains(text(),"{value}")]').click()
 
-    def navigation_menu(self):
+    def select_navigation_menu(self):
         browser.element('.site-header__subnav-button').click()
 
-    def button_arzoom(self):
+    def click_button_arzoom(self):
         browser.element('.site-header__arzroom-link').click()
 
-    def button_goosegoose(self):
+    def click_button_goosegoose(self):
         browser.element('.site-header__goosegoose-link').click()
 
-    def button_download_app(self):
+    def click_button_download_app(self):
         browser.element('.site-header__arzamas-app-link').click()
 
-    def button_gift_certificate(self):
+    def click_button_gift_certificate(self):
         browser.element('.site-header__get-gift-certificate').click()
 
-    def button_login(self):
+    def click_button_login(self):
         browser.element('.site-header__login-button').click()
 
-    def button_search(self):
+    def click_button_search(self):
         browser.element('.site-header__search-button').click()
 
     def select_type_filter_kind_courses(self, value):
@@ -42,7 +42,7 @@ class OpenPage:
 
     def open_page_course(self, value):
         self.open()
-        self.navigation_list('Курсы')
+        self.select_navigation_list('Курсы')
         self.select_type_filter_kind_courses(value)
         self.select_course()
 

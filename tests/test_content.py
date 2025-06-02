@@ -19,7 +19,7 @@ def test_mapping_courses_content():
         open_page.open()
 
     with allure.step('В меню хедера нажать на кнопку "Курсы"'):
-        open_page.navigation_list(nav_list_value.courses_nav_list.value)
+        open_page.select_navigation_list(nav_list_value.courses_nav_list.value)
 
     with allure.step('Выбрать вид курса'):
         open_page.select_type_filter_kind_courses(item_course_value.item_course_world_history.value)
@@ -51,7 +51,7 @@ def test_mapping_podcast_content():
         open_page.open()
 
     with allure.step('В меню хедера нажать на кнопку "Подкасты"'):
-        open_page.navigation_list(nav_list_value.podcast_nav_list.value)
+        open_page.select_navigation_list(nav_list_value.podcast_nav_list.value)
 
     with allure.step('Выбрать вид подкаста'):
         open_page.select_type_filter_kind_courses(item_course_value.item_course_russian_history.value)
@@ -70,7 +70,7 @@ def test_mapping_audio_materials():
         open_page.open()
 
     with allure.step('В меню хедера нажать на кнопку "Материалы"'):
-        open_page.navigation_list(nav_list_value.audio_material_nav_list.value)
+        open_page.select_navigation_list(nav_list_value.audio_material_nav_list.value)
 
     with allure.step('Выбрать вид подкаста'):
         open_page.select_type_filter_kind_courses(item_course_value.item_course_anthropology.value)

@@ -16,10 +16,10 @@ def test_mapping_courses_kids():
         open_page.open()
 
     with allure.step('Нажать на кнопку в хедер меню "Гусьгусь"'):
-        open_page.button_goosegoose()
+        open_page.click_button_goosegoose()
 
     with allure.step('Открыть раздел "Курсы"'):
-        kids.navigation_list_kids(nav_list_value_kids.courses_nav_list_kids.value)
+        kids.select_navigation_list_kids(nav_list_value_kids.courses_nav_list_kids.value)
 
     with allure.step('Открыть курс "Съедобное/несъедобное"'):
         kids.select_course_kids()
@@ -35,10 +35,10 @@ def test_mapping_podcast_kids():
         open_page.open()
 
     with allure.step('Нажать на кнопку в хедер меню "Гусьгусь"'):
-        open_page.button_goosegoose()
+        open_page.click_button_goosegoose()
 
     with allure.step('Открыть раздел "Подкасты"'):
-        kids.navigation_list_kids(nav_list_value_kids.podcasts_nav_list_kids.value)
+        kids.select_navigation_list_kids(nav_list_value_kids.podcasts_nav_list_kids.value)
 
     with allure.step('Открыть подкаст "Это вам не сказки"'):
         kids.select_podcast_kids()
@@ -54,10 +54,10 @@ def test_mapping_audio_kids():
         open_page.open()
 
     with allure.step('Нажать на кнопку в хедер меню "Гусьгусь"'):
-        open_page.button_goosegoose()
+        open_page.click_button_goosegoose()
 
     with allure.step('Открыть раздел "Аудиокниги"'):
-        kids.navigation_list_kids(nav_list_value_kids.audio_materials_nav_list_kids.value)
+        kids.select_navigation_list_kids(nav_list_value_kids.audio_materials_nav_list_kids.value)
 
     with allure.step('Открыть аудиокнигу "Мифы звездного неба"'):
         kids.select_audio_material_kids()
