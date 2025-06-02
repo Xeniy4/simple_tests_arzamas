@@ -1,3 +1,4 @@
+
 from selene import browser, have
 
 
@@ -8,16 +9,9 @@ class OpenPage:
 
     def navigation_list(self, value):
         browser.element(f'//li/a[contains(text(),"{value}")]').click()
-    # варианты: Курсы, Подкасты, Материалы, Журнал
 
     def navigation_menu(self):
         browser.element('.site-header__subnav-button').click()
-
-    def navigation_menu_point(self, value):
-        browser.element(f'//nav//span[contains(text(),"{value}")]').click()
-    # варианты value: Автор среди нас, Еврейский музей, Новая Третьяковка, Онлайн-университет, Запад и Восток: история культур
-    # Видеоистория русской культуры, Русский язык от «гой еси» до «лол кек», Что такое античность, Русское искусство XX века
-    # Русская литература XX века, Детская комната
 
     def button_arzoom(self):
         browser.element('.site-header__arzroom-link').click()
@@ -39,8 +33,6 @@ class OpenPage:
 
     def select_type_filter_kind_courses(self, value):
         browser.element(f'//main/div/div/div/button[contains(text(),"{value}")]').click()
-    # варианты value: Все, Искусство, Мировая история, История России, Литература, Антропология, Кино, Театр,
-    # Музыка, Архитектура, Философия, Экономика
 
     def check_title_content_page(self, value):
         browser.element('.course-title').should(have.text(value))

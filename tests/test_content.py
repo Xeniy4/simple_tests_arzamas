@@ -2,10 +2,13 @@ import allure
 from pages.page_search import Search
 from pages.page_courses import Courses
 from pages.page_open import OpenPage
+from pages.page_value_items import NavigationListValue, ItemCourseValue
 
 open_page = OpenPage()
 courses = Courses()
 search = Search()
+nav_list_value = NavigationListValue
+item_course_value =  ItemCourseValue
 
 
 @allure.epic("Web UI тесты")
@@ -16,10 +19,10 @@ def test_mapping_courses_content():
         open_page.open()
 
     with allure.step('В меню хедера нажать на кнопку "Курсы"'):
-        open_page.navigation_list('Курсы')
+        open_page.navigation_list(nav_list_value.courses_nav_list.value)
 
     with allure.step('Выбрать вид курса'):
-        open_page.select_type_filter_kind_courses('Мировая история')
+        open_page.select_type_filter_kind_courses(item_course_value.item_course_world_history.value)
 
     with allure.step('Открыть курс "Гай Юлий Цезарь покоряет мир"'):
         open_page.select_course()
@@ -32,7 +35,7 @@ def test_mapping_courses_content():
 @allure.story('Проверка покупки курса без авторизации на сайте')
 def test_buy_course_no_auth():
     with allure.step('Открыть страницу курса'):
-        open_page.open_page_course('Мировая история')
+        open_page.open_page_course(item_course_value.item_course_world_history.value)
 
     with allure.step('Нажать на кнопку "Купить"'):
         courses.click_button_pay_course()
@@ -43,15 +46,15 @@ def test_buy_course_no_auth():
 
 @allure.epic("Web UI тесты")
 @allure.story('Проверка отображения заголовка подкаста')
-def test_mapping_pogcast_content():
+def test_mapping_podcast_content():
     with allure.step('Открыть Главную страницу'):
         open_page.open()
 
     with allure.step('В меню хедера нажать на кнопку "Подкасты"'):
-        open_page.navigation_list('Подкасты')
+        open_page.navigation_list(nav_list_value.podcast_nav_list.value)
 
     with allure.step('Выбрать вид подкаста'):
-        open_page.select_type_filter_kind_courses('История России')
+        open_page.select_type_filter_kind_courses(item_course_value.item_course_russian_history.value)
 
     with allure.step('Открыть подкаст "Проверка связей"'):
         open_page.select_podcast()
@@ -67,10 +70,10 @@ def test_mapping_audio_materials():
         open_page.open()
 
     with allure.step('В меню хедера нажать на кнопку "Материалы"'):
-        open_page.navigation_list('Материалы')
+        open_page.navigation_list(nav_list_value.audio_material_nav_list.value)
 
     with allure.step('Выбрать вид подкаста'):
-        open_page.select_type_filter_kind_courses('Антропология')
+        open_page.select_type_filter_kind_courses(item_course_value.item_course_anthropology.value)
 
     with allure.step('Открыть аудиоматериал "Краткая история вещей"'):
         open_page.select_audio_material()
