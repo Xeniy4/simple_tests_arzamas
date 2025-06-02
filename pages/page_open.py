@@ -42,7 +42,7 @@ class OpenPage:
     # варианты value: Все, Искусство, Мировая история, История России, Литература, Антропология, Кино, Театр,
     # Музыка, Архитектура, Философия, Экономика
 
-    def check_tytle_content_page(self, value):
+    def check_title_content_page(self, value):
         browser.element('.course-title').should(have.text(value))
 
     def select_course(self):

@@ -10,7 +10,7 @@ search = Search()
 
 @allure.epic("Web UI тесты")
 @allure.story('Проверка отображения карточки курса')
-def test_courses_content():
+def test_mapping_courses_content():
 
     with allure.step('Открыть Главную страницу'):
         open_page.open()
@@ -25,7 +25,7 @@ def test_courses_content():
         open_page.select_course()
 
     with allure.step('Проверка отображения заголовка курса'):
-        open_page.check_tytle_content_page('Гай Юлий Цезарь покоряет мир')
+        open_page.check_title_content_page('Гай Юлий Цезарь покоряет мир')
 
 
 @allure.epic("Web UI тесты")
@@ -43,7 +43,7 @@ def test_buy_course_no_auth():
 
 @allure.epic("Web UI тесты")
 @allure.story('Проверка отображения заголовка подкаста')
-def test_pogcast_content():
+def test_mapping_pogcast_content():
     with allure.step('Открыть Главную страницу'):
         open_page.open()
 
@@ -57,12 +57,12 @@ def test_pogcast_content():
         open_page.select_podcast()
 
     with allure.step('Проверка отображения заголовка подкаста'):
-        open_page.check_tytle_content_page('Проверка связей')
+        open_page.check_title_content_page('Проверка связей')
 
 
 @allure.epic("Web UI тесты")
 @allure.story('Проверка отображения заголовка аудиоматериала')
-def test_audio_materials():
+def test_mapping_audio_materials():
     with allure.step('Открыть Главную страницу'):
         open_page.open()
 
@@ -76,4 +76,4 @@ def test_audio_materials():
         open_page.select_audio_material()
 
     with allure.step('Проверка отображения заголовка аудиоматериала'):
-        open_page.check_tytle_content_page('Краткая история вещей')
+        open_page.check_title_content_page('Краткая история вещей')
