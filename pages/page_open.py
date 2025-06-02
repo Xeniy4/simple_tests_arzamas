@@ -4,7 +4,7 @@ from selene import browser, have
 class OpenPage:
 
     def open(self):
-        browser.open('/')
+        browser.open('https://arzamas.academy/')
 
     def navigation_list(self, value):
         browser.element(f'//li/a[contains(text(),"{value}")]').click()
