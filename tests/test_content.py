@@ -9,7 +9,7 @@ search = Search()
 
 
 @allure.epic("Web UI тесты")
-@allure.story('Проверка отображения карточки курса2')
+@allure.story('Проверка отображения карточки курса')
 def test_mapping_courses_content():
 
     with allure.step('Открыть Главную страницу'):
