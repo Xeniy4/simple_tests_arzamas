@@ -31,12 +31,13 @@ def selenoid():
 
     selenoid_full_url = f"https://{selenoid_login}:{selenoid_pass}@{selenoid_url}/wd/hub"
 
-    options.capabilities.update(selenoid_capabilities)
-    driver = webdriver.Remote(
-        command_executor=selenoid_full_url,
-        options=options)
+    if selenoid_url:
+        options.capabilities.update(selenoid_capabilities)
+        driver = webdriver.Remote(
+            command_executor=selenoid_full_url,
+            options=options)
 
-    browser.config.driver = driver
+        browser.config.driver = driver
 
     driver_options = webdriver.ChromeOptions()
     driver_options.page_load_strategy = 'normal'
@@ -51,15 +52,3 @@ def selenoid():
     attach.add_screenshot(browser)
     browser.quit()
 
-
-# @pytest.fixture(scope='session', autouse=True)
-# def browser_manager():
-#     driver_options = webdriver.ChromeOptions()
-#     driver_options.page_load_strategy = 'normal'
-#     browser.config.driver_options = driver_options
-#     browser.config.base_url = "https://arzamas.academy"
-#     browser.config.window_width = 1920
-#     browser.config.window_height = 1080
-#     #browser.config.timeout = 120
-#     yield
-#     browser.quit()
